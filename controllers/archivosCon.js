@@ -4,6 +4,11 @@ var archivoPdf = require('../models/archivo');
 var fs = require('fs');
 
 var archivos = {
+    index:function(req,res){
+        return res.status(200).send({
+            message: '<h1>Api manejador de PDF</h1>'
+        });
+    },
     test: function(req,res){
         return res.status(200).send({
             message: 'Funcion Test'

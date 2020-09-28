@@ -8,7 +8,7 @@ var router = express.Router();
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart({ uploadDir: './archivos'});
 
-
+router.get('/',ArchivosController.index);
 router.post('/test',ArchivosController.test);
 router.post('/guardarPdf',ArchivosController.guardarPdf);
 router.get('/pdf/:id?', ArchivosController.getPdf);
