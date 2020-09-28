@@ -4,11 +4,7 @@ var archivoPdf = require('../models/archivo');
 var fs = require('fs');
 
 var archivos = {
-    index:function(req,res){
-        return res.status(200).send({
-            message: '<h1>Api manejador de PDF</h1>'
-        });
-    },
+
     test: function(req,res){
         return res.status(200).send({
             message: 'Funcion Test'
@@ -86,13 +82,14 @@ var archivos = {
     deletePdf: function(req, res){
         var pdfId = req.params.id;
 
-        archivoPdf.findOneAndR(pdfId, (err, pdfDelete)=>{
+        archivoPdf.findOneAndRemove(pdfId, (err, pdfDelete)=>{
             if(err) return res.status(500).send({message: 'Error al borrar el pdf.'});
 
             if(!pdfDelete) return res.status(404).send({message: 'No existe el pdf.' });
 
             res.status(200).send({
-                project: pdfDelete
+                project: pdfDelete,
+                message: 'Registro borrado'
             });
             
         });

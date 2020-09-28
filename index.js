@@ -4,7 +4,7 @@ var app= require('./app');
 var port=3000;
 
 mongose.Promise = global.Promise;
-mongose.connect('mongodb+srv://usuario_prueba:12pmT35t@cluster0.utxgu.mongodb.net/<dbname>?retryWrites=true&w=majority')
+mongose.connect('mongodb+srv://<usuario>:<password>@cluster0.utxgu.mongodb.net/<dbname>?retryWrites=true&w=majority')
     .then(()=>{
         console.log("conexion establecida a db");
 

@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 
 
 //rutas
-app.use('/', archivos_routers);
+app.use('/api', archivos_routers);
 
 //exportar
 module.exports=app;
