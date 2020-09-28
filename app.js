@@ -7,6 +7,7 @@ var app=express();
 
 //cargar archivos de rutas
 var archivos_routers = require('./routers/archivosRou');
+const { index } = require('./controllers/archivosCon');
 
 //middlewares
 app.use(bodyParser.urlencoded({extended:false}));
@@ -23,7 +24,7 @@ app.use((req, res, next) => {
 
 
 //rutas
-app.use('/api', archivos_routers);
+app.use('/', archivos_routers);
 
 //exportar
 module.exports=app;
